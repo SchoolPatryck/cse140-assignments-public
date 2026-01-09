@@ -29,8 +29,17 @@ def buyLotsOfFruit(orderList):
     """
 
     # *** Your Code Here ***
+    sum = 0
 
-    return None
+    for fruit in orderList:
+
+        try:
+            sum += FRUIT_PRICES[fruit[0]] * fruit[1]
+        except Exception as e:
+            print(e)
+            return None
+
+    return sum
 
 def main():
     orderList = [
