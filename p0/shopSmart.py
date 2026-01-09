@@ -21,7 +21,17 @@ def shopSmart(orderList, fruitShops):
 
     # *** Your Code Here ***
 
-    return None
+    sum = 0
+    min_shop = None
+
+    for fruit_shop in fruitShops:
+        new_sum = fruit_shop.getPriceOfOrder(orderList)
+        print(fruit_shop, new_sum)
+        if (not min_shop or new_sum < sum):
+            min_shop = fruit_shop
+            sum = new_sum
+
+    return min_shop
 
 def main():
     dir1 = {
